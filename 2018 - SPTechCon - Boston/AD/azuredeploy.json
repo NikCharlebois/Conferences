@@ -25,7 +25,7 @@
         }
     },
     "variables": {
-        "assetLocation": "https://raw.githubusercontent.com/NikCharlebois/Conferences/master/2018 - SPTechCon - Boston/AD",
+        "assetLocation": "https://github.com.com/NikCharlebois/Conferences/raw/master/2018 - SPTechCon - Boston/AD",
         "adVMSize": "Standard_D4s_v3",
         "adOSVersion": "2016-Datacenter",
         "vmNetworkSubnet": "10.0.0.0/24",

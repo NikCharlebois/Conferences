@@ -39,8 +39,8 @@
         }
     },
     "variables": {
-        "sqlassetLocation": "https://raw.githubusercontent.com/NikCharlebois/Conferences/2018 - SPTechCon - Boston/SQL2017",
-        "adAssetLocation": "https://raw.githubusercontent.com/NikCharlebois/Conferences/master/2018 - SPTechCon - Boston/AD",
+        "sqlassetLocation": "https://github.com.com/NikCharlebois/Conferences/raw/master/2018 - SPTechCon - Boston/SQL2017",
+        "adAssetLocation": "https://github.com/NikCharlebois/Conferences/raw/master/2018 - SPTechCon - Boston/AD",
         "location": "[resourceGroup().location]",
         "sqlServerServiceAccountPassword": "[parameters('adminPassword')]",
         "vmNetworkSubnet": "10.0.0.0/24",
