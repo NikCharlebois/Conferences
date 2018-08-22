@@ -106,15 +106,15 @@
                             "UserName": "[parameters('adminUserName')]",
                             "Password": "PrivateSettingsRef:AdminPassword"
                         },
-                        "SharePointSetupUserAccountcreds": {
+                        "SPSetup": {
                             "UserName": "[parameters('sharePointSetupUserAccountUserName')]",
                             "Password": "PrivateSettingsRef:SharePointSetupUserAccountPassword"
                         },
-                        "SharePointFarmAccountcreds": {
+                        "SPFarm": {
                             "UserName": "[parameters('sharePointFarmAccountUserName')]",
                             "Password": "PrivateSettingsRef:SharePointFarmAccountPassword"
                         },
-                        "SharePointFarmPassphrasecreds": {
+                        "Passphrase": {
                             "UserName": "ignore",
                             "Password": "PrivateSettingsRef:SharePointFarmPassphrasePassword"
                         },
