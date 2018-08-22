@@ -1,1 +1,1 @@
-
+This repository contains Azure Resource Manager Templates that can be used to deploy the demo environment used during the "VSTS, ARM, DSC and SharePoint 2019: A match made in heaven" session presented at SPTechCon Boston in August 2018. It deploys a 5 servers environment: 1 Domain Controller (Win2k16), 1 SQLServer 2017 Server (Win2k16) and 3 SharePoint 2019 Servers (Win2k16).
