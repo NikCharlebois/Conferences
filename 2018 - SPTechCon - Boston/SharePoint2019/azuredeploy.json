@@ -965,7 +965,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('spVmDeploymentID')]"
+        "[variables('spVmDeploymentID')]",
+        "[variables('sqlClusterVmDeploymentID')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -1048,7 +1049,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('spVmDeploymentID2')]"
+        "[variables('spVmDeploymentID2')]",
+        "[variables('sqlClusterVmDeploymentID')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -1131,7 +1133,8 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('spVmDeploymentID3')]"
+        "[variables('spVmDeploymentID3')]",
+        "[variables('sqlClusterVmDeploymentID')]"
       ],
       "properties": {
         "mode": "Incremental",
