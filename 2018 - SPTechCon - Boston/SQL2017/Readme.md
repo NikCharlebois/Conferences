@@ -1,6 +1,6 @@
-# Create a SQL Server 2014 Stand alone with PowerShell DSC Extension
+# Create a SQL Server 2017 Stand alone with PowerShell DSC Extension
 
-This template will create a SQL Server 2014 Always On Availability Group using the PowerShell DSC Extension it creates the following resources:
+This template will create a SQL Server 2017 Always On Availability Group using the PowerShell DSC Extension it creates the following resources:
 
 +	A Virtual Network
 +	Two Storage Accounts
@@ -46,11 +46,11 @@ Change working folder to the folder containing this template
 $AadTenantId = <Tenant Id> #GUID Specific to the AAD Tenant 
 
 Add-AzureRmEnvironment -Name 'Azure Stack' `
-    -ActiveDirectoryEndpoint ("https://login.windows.net/$AadTenantId/") `
-    -ActiveDirectoryServiceEndpointResourceId "https://azurestack.local-api/" `
-    -ResourceManagerEndpoint ("https://api.azurestack.local/") `
-    -GalleryEndpoint ("https://gallery.azurestack.local/") `
-    -GraphEndpoint "https://graph.windows.net/"
+Â Â Â  -ActiveDirectoryEndpoint ("https://login.windows.net/$AadTenantId/") `
+Â Â Â  -ActiveDirectoryServiceEndpointResourceId "https://azurestack.local-api/" `
+Â Â Â  -ResourceManagerEndpoint ("https://api.azurestack.local/") `
+Â Â Â  -GalleryEndpoint ("https://gallery.azurestack.local/") `
+Â Â Â  -GraphEndpoint "https://graph.windows.net/"
 
 # Get Azure Stack Environment Information 
 $env = Get-AzureRmEnvironment 'Azure Stack' 
@@ -70,4 +70,4 @@ New-AzurermResourceGroup -Name $resourceGroupName -Location $location
 
 #Start new Deployment
 New-AzurermResourceGroupDeployment -Name $deploymentName -ResourceGroupName $resourceGroupName `
-    -TemplateParameterFile .\azuredeploy.azurestack.parameters.json -TemplateFile .\azuredeploy.json
+Â Â Â  -TemplateParameterFile .\azuredeploy.azurestack.parameters.json -TemplateFile .\azuredeploy.json
