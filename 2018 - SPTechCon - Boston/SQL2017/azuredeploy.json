@@ -39,7 +39,7 @@
         }
     },
     "variables": {
-        "sqlassetLocation": "https://github.com.com/NikCharlebois/Conferences/raw/master/2018 - SPTechCon - Boston/SQL2017",
+        "sqlassetLocation": "https://github.com/NikCharlebois/Conferences/raw/master/2018 - SPTechCon - Boston/SQL2017",
         "adAssetLocation": "https://github.com/NikCharlebois/Conferences/raw/master/2018 - SPTechCon - Boston/AD",
         "location": "[resourceGroup().location]",
         "sqlServerServiceAccountPassword": "[parameters('adminPassword')]",
