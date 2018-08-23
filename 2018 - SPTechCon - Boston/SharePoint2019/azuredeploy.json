@@ -921,7 +921,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[variables('sqlClusterVmDeployment')]"
+        "[variables('sqlClusterVmDeploymentID')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -965,6 +965,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
+        "[variables('deploySqlStandaloneID')]",
         "[variables('spVmDeploymentID')]"
       ],
       "properties": {
@@ -1048,6 +1049,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
+        "[variables('deploySqlStandaloneID')]",
         "[variables('spVmDeploymentID2')]"
       ],
       "properties": {
@@ -1131,6 +1133,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
+        "[variables('deploySqlStandaloneID')]",
         "[variables('spVmDeploymentID3')]"
       ],
       "properties": {
