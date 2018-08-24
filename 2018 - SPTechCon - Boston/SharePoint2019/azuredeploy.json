@@ -1015,7 +1015,7 @@
             "value": "[parameters('adminPassword')]"
           },
           "sharePointFarmAccountPassword": {
-            "value": "[variables('sqlServerServiceAccountPassword')]"
+            "value": "[parameters('adminPassword')]"
           },
           "sharePointFarmPassphrasePassword": {
             "value": "[variables('sharePointFarmPassphrasePassword')]"
@@ -1069,10 +1069,10 @@
             "value": "[parameters('adminUsername')]"
           },
           "sharePointSetupUserAccountUserName": {
-            "value": "[parameters('adminUsername')]"
+            "value": "[variables('spSetupAccountName')]"
           },
           "sharePointFarmAccountUserName": {
-            "value": "[parameters('sqlServerServiceAccountUserName')]"
+            "value": "[variables('spFarmAccountName')]"
           },
           "configDatabaseName": {
             "value": "[variables('spconfigDatabaseName')]"
@@ -1099,7 +1099,7 @@
             "value": "[parameters('adminPassword')]"
           },
           "sharePointFarmAccountPassword": {
-            "value": "[variables('sqlServerServiceAccountPassword')]"
+            "value": "[parameters('adminPassword')]"
           },
           "sharePointFarmPassphrasePassword": {
             "value": "[variables('sharePointFarmPassphrasePassword')]"
@@ -1153,10 +1153,10 @@
             "value": "[parameters('adminUsername')]"
           },
           "sharePointSetupUserAccountUserName": {
-            "value": "[parameters('adminUsername')]"
+            "value": "[variables('spSetupAccountName')]"
           },
           "sharePointFarmAccountUserName": {
-            "value": "[parameters('sqlServerServiceAccountUserName')]"
+            "value": "[variables('spFarmAccountName')]"
           },
           "configDatabaseName": {
             "value": "[variables('spconfigDatabaseName')]"
@@ -1183,7 +1183,7 @@
             "value": "[parameters('adminPassword')]"
           },
           "sharePointFarmAccountPassword": {
-            "value": "[variables('sqlServerServiceAccountPassword')]"
+            "value": "[parameters('adminPassword')]"
           },
           "sharePointFarmPassphrasePassword": {
             "value": "[variables('sharePointFarmPassphrasePassword')]"
