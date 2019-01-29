@@ -225,30 +225,6 @@
     },
     {
       "apiVersion": "2015-05-01-preview",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('spPublicIPAddressName2')]",
-      "location": "[variables('location')]",
-      "dependsOn": [
-        "[variables('vnetID')]"
-      ],
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic"
-      }
-    },
-    {
-      "apiVersion": "2015-05-01-preview",
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('spPublicIPAddressName3')]",
-      "location": "[variables('location')]",
-      "dependsOn": [
-        "[variables('vnetID')]"
-      ],
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic"
-      }
-    },
-    {
-      "apiVersion": "2015-05-01-preview",
       "name": "[variables('publiclbName')]",
       "type": "Microsoft.Network/loadBalancers",
       "location": "[variables('location')]",
