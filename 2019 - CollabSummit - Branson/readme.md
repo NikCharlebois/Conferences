@@ -1,4 +1,4 @@
-<a href="http://sptechcon.com"><img src="https://github.com/NikCharlebois/Conferences/raw/master/2019%20-%20CollabSummit%20-%20Branson/Resources/Images/NACS.jpg" alt="North American Collaboration Summit"></a>
+<a href="http://sptechcon.com"><img src="https://github.com/NikCharlebois/Conferences/raw/master/2019%20-%20CollabSummit%20-%20Branson/Resources/Images/NACS.jpg" alt="North American Collaboration Summit" width="250"></a>
 <p>This repository contains Azure Resource Manager Templates that can be used to deploy the demo environment used during the "<strong>DevOPs for SharePoint Admins: Concrete Scenarios</strong>" session presented at North American Collaboration Summit in Branson (Missouri) in March 2019. It deploys a 5 servers environment: 1 Domain Controller (Win2k16), 1 SQLServer 2017 Server (Win2k16) and 3 SharePoint 2019 Servers (Win2k16).</p>
 
 <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgithub.com%2FNikCharlebois%2FConferences%2Fraw%2Fmaster%2F2019%20-%20CollabSummit%20-%20Branson%2FSharePoint2019%2Fazuredeploy.json"><img src="http://azuredeploy.net/deploybutton.png" alt="Deploy Environment in Azure" /></a>
