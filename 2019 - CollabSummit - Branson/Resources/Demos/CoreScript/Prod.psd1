@@ -1,23 +1,23 @@
 @{
     AllNodes = @(
         @{
-            NodeName        = "SPWFENACS"
+            NodeName        = "SPWFENACS-PROD"
             RunCentralAdmin = $true
             ServerRole      = "WebFrontEndWithDistributedCache"
         },
         @{
-            NodeName        = "SPAPPNACS"
+            NodeName        = "SPAPPNACS-PROD"
             RunCentralAdmin = $false
             ServerRole      = "Application"
         },
         @{
-            NodeName        = "SPSEARCHNACS"
+            NodeName        = "SPSEARCHNACS-PROD"
             RunCentralAdmin = $false
             ServerRole      = "Search"
         }
     )
     Environment = @{
-        Domain         = "contoso.dev"
-        DatabaseServer = "SPSQLNACS"
+        Domain         = "contoso.com"
+        DatabaseServer = "SPSQLNACS-PROD"
     }
 }
