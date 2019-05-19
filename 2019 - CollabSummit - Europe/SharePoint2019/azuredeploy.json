@@ -1,5 +1,5 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "domainName": {
@@ -59,9 +59,9 @@
     "adVMSize": "Standard_D4s_v3",
     "sqlVMSize": "Standard_D4s_v3",
     "spVMSize": "Standard_D4s_v3",
-    "spassetLocation": "https://github.com/NikCharlebois/Conferences/raw/master/2019 - SPTechCon - Austin/SharePoint2019",
-    "adAssetLocation": "https://github.com/NikCharlebois/Conferences/raw/master/2019 - SPTechCon - Austin/AD",
-    "sqlAssetLocation": "https://github.com/NikCharlebois/Conferences/raw/master/2019 - SPTechCon - Austin/SQL2017",
+    "spassetLocation": "https://github.com/NikCharlebois/Conferences/raw/master/2019 - CollabSummit - Europe/SharePoint2019",
+    "adAssetLocation": "https://github.com/NikCharlebois/Conferences/raw/master/2019 - CollabSummit - Europe/AD",
+    "sqlAssetLocation": "https://github.com/NikCharlebois/Conferences/raw/master/2019 - CollabSummit - Europe/SQL2017",
     "location": "[resourceGroup().location]",
     "vmNetworkSubnet": "10.0.0.0/24",
     "virtualNetworkAddressRange": "10.0.0.0/16",
