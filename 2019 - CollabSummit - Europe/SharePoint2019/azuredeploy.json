@@ -126,7 +126,9 @@
     "spAdminProbe": "spAdminProbe",
     "spSiteRule": "SPSiteLBRule",
     "spAdminRule": "SPAdminLBRule",
-    "sprdpNAT": "SPRDPNAT1",
+    "sprdpNAT": "SPRDPNATWFE",
+    "sprdpNATApp": "SPRDPNATAPP",
+    "sprdpNATSearch": "SPRDPNATSRC",
     "spPublicLBID": "[resourceId('Microsoft.Network/loadBalancers',variables('sppublicLBName'))]",
     "spPubliclbFEConfigID": "[concat(variables('sppubliclbID'),'/frontendIPConfigurations/',variables('splbFE'))]",
     "spSiteProbeID": "[concat(variables('sppubliclbID'),'/probes/',variables('spSiteProbe'))]",
@@ -134,6 +136,8 @@
     "sprdpPort": 3390,
     "sppublicBEAddressPoolID": "[concat(variables('sppubliclbID'),'/backendAddressPools/',variables('splbBE'))]",
     "spRDPNATRuleID": "[concat(variables('sppubliclbID'),'/inboundNatRules/',variables('sprdpNAT'))]",
+    "spRDPNATRuleIDApp": "[concat(variables('sppubliclbID'),'/inboundNatRules/',variables('sprdpNATApp'))]",
+    "spRDPNATRuleIDSearch": "[concat(variables('sppubliclbID'),'/inboundNatRules/',variables('sprdpNATSearch'))]",
     "spSourceDrive": "C:",
     "spSourceFolder": "SharePoint2019",
     "spconfigDatabaseName": "SP_Config",
@@ -595,7 +599,7 @@
             "value": "[variables('staticSubnetID')]"
           },
           "rdpNATRuleID": {
-            "value": "[variables('spRDPNATRuleID')]"
+            "value": "[variables('spRDPNATRuleIDApp')]"
           },
           "lbBEPool": {
             "value": "[variables('sppublicBEAddressPoolID')]"
@@ -640,7 +644,7 @@
             "value": "[variables('staticSubnetID')]"
           },
           "rdpNATRuleID": {
-            "value": "[variables('spRDPNATRuleID')]"
+            "value": "[variables('spRDPNATRuleIDSearch')]"
           },
           "lbBEPool": {
             "value": "[variables('sppublicBEAddressPoolID')]"
