@@ -93,7 +93,13 @@
     "spStorageName": "[tolower(concat('SPWFESA',resourceGroup().name))]",
     "spVmDeployment": "CreateSPWFE",
     "spVmDeploymentID": "[concat('Microsoft.Resources/deployments/', variables('spVmDeployment'))]",
-    "spVmName": "[concat('SPTC19',resourceGroup().name)]",
+    "spVmName": "[concat('SPWFE',resourceGroup().name)]",
+    "spVmDeploymentApp": "CreateSPApp",
+    "spVmDeploymentIDApp": "[concat('Microsoft.Resources/deployments/', variables('spVmDeploymentApp'))]",
+    "spVmNameApp": "[concat('SPAPP',resourceGroup().name)]",
+    "spVmDeploymentSearch": "CreateSPSearch",
+    "spVmDeploymentIDSearch": "[concat('Microsoft.Resources/deployments/', variables('spVmDeploymentSearch'))]",
+    "spVmNameSearch": "[concat('SPSRC',resourceGroup().name)]",
     "deploySPStandalone": "SPTC19",
     "deploySPStandaloneTemplateURL": "[concat(variables('spassetLocation'),'/deploySharePointStandalone.json')]",
     "sqlNicName": "[concat('SPSQLNIC',resourceGroup().name)]",
@@ -510,7 +516,7 @@
     {
       "name": "[variables('spVmDeployment')]",
       "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2015-01-01",
+      "apiVersion": "2018-05-01",
       "dependsOn": [
         "[variables('spPublicLBID')]",
         "[variables('updateVNetDNS1Id')]"
@@ -524,6 +530,96 @@
         "parameters": {
           "vmName": {
             "value": "[variables('spVmName')]"
+          },
+          "storageAccount": {
+            "value": "[variables('spStorageName')]"
+          },
+          "storageAccountType": {
+            "value": "[variables('storageAccountType')]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "vmSize": {
+            "value": "[variables('spVMSize')]"
+          },
+          "subnetResourceId": {
+            "value": "[variables('staticSubnetID')]"
+          },
+          "rdpNATRuleID": {
+            "value": "[variables('spRDPNATRuleID')]"
+          },
+          "lbBEPool": {
+            "value": "[variables('sppublicBEAddressPoolID')]"
+          }
+        }
+      }
+    },
+    {
+      "name": "[variables('spVmDeploymentApp')]",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-05-01",
+      "dependsOn": [
+        "[variables('spPublicLBID')]",
+        "[variables('updateVNetDNS1Id')]"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('spTemplateURL')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "vmName": {
+            "value": "[variables('spVmNameApp')]"
+          },
+          "storageAccount": {
+            "value": "[variables('spStorageName')]"
+          },
+          "storageAccountType": {
+            "value": "[variables('storageAccountType')]"
+          },
+          "adminUsername": {
+            "value": "[parameters('adminUsername')]"
+          },
+          "adminPassword": {
+            "value": "[parameters('adminPassword')]"
+          },
+          "vmSize": {
+            "value": "[variables('spVMSize')]"
+          },
+          "subnetResourceId": {
+            "value": "[variables('staticSubnetID')]"
+          },
+          "rdpNATRuleID": {
+            "value": "[variables('spRDPNATRuleID')]"
+          },
+          "lbBEPool": {
+            "value": "[variables('sppublicBEAddressPoolID')]"
+          }
+        }
+      }
+    },
+    {
+      "name": "[variables('spVmDeploymentSearch')]",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-05-01",
+      "dependsOn": [
+        "[variables('spPublicLBID')]",
+        "[variables('updateVNetDNS1Id')]"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('spTemplateURL')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "vmName": {
+            "value": "[variables('spVmNameSearch')]"
           },
           "storageAccount": {
             "value": "[variables('spStorageName')]"
