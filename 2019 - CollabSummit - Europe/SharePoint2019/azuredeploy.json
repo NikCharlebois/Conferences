@@ -599,7 +599,7 @@
             "value": "[variables('staticSubnetID')]"
           },
           "rdpNATRuleID": {
-            "value": "[variables('spRDPNATRuleIDApp')]"
+            "value": "[variables('spRDPNATRuleID')]"
           },
           "lbBEPool": {
             "value": "[variables('sppublicBEAddressPoolID')]"
@@ -644,7 +644,7 @@
             "value": "[variables('staticSubnetID')]"
           },
           "rdpNATRuleID": {
-            "value": "[variables('spRDPNATRuleIDSearch')]"
+            "value": "[variables('spRDPNATRuleID')]"
           },
           "lbBEPool": {
             "value": "[variables('sppublicBEAddressPoolID')]"
