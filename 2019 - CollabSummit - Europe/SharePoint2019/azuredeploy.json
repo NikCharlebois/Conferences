@@ -362,30 +362,6 @@
               "backendPort": 3389,
               "enableFloatingIP": false
             }
-          },
-          {
-            "name": "[variables('sprdpNATApp')]",
-            "properties": {
-              "frontendIPConfiguration": {
-                "id": "[variables('sppubliclbFEConfigID')]"
-              },
-              "protocol": "tcp",
-              "frontendPort": "[variables('sprdpPort')]",
-              "backendPort": 3389,
-              "enableFloatingIP": false
-            }
-          },
-          {
-            "name": "[variables('sprdpNATSearch')]",
-            "properties": {
-              "frontendIPConfiguration": {
-                "id": "[variables('sppubliclbFEConfigID')]"
-              },
-              "protocol": "tcp",
-              "frontendPort": "[variables('sprdpPort')]",
-              "backendPort": 3389,
-              "enableFloatingIP": false
-            }
           }
         ]
       }
