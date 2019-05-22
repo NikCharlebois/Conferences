@@ -181,7 +181,7 @@
     "spRDPNATRuleID2": "[concat(variables('sppubliclbID2'),'/inboundNatRules/',variables('sprdpNAT2'))]",
     "spRDPNATRuleID3": "[concat(variables('sppubliclbID3'),'/inboundNatRules/',variables('sprdpNAT3'))]",
     "spSourceDrive": "C:",
-    "spSourceFolder": "SharePoint2016",
+    "spSourceFolder": "SharePoint2019",
     "spconfigDatabaseName": "SP_Config",
     "spadministrationContentDatabaseName": "SP_AdminContent",
     "spcontentDatabaseName": "spFarm_Content",
@@ -1030,13 +1030,13 @@
             "value": "[variables('spSourceFolder')]"
           },
           "ProductKey": {
-            "value": "[parameters('sharepoint2016ProductKey')]"
+            "value": "[parameters('sharepoint2019ProductKey')]"
           },
           "assetLocation": {
             "value": "[variables('spassetLocation')]"
           },
-          "sharepoint2016SourceDLLink": {
-            "value": "[parameters('sharepoint2016DownloadLink')]"
+          "sharepoint2019SourceDLLink": {
+            "value": "[parameters('sharepoint2019DownloadLink')]"
           },
           "primaryAdIpAddress": {
             "value": "[variables('primaryAdIpAddress')]"
@@ -1114,13 +1114,13 @@
             "value": "[variables('spSourceFolder')]"
           },
           "ProductKey": {
-            "value": "[parameters('sharepoint2016ProductKey')]"
+            "value": "[parameters('sharepoint2019ProductKey')]"
           },
           "assetLocation": {
             "value": "[variables('spassetLocation')]"
           },
-          "sharepoint2016SourceDLLink": {
-            "value": "[parameters('sharepoint2016DownloadLink')]"
+          "sharepoint2019SourceDLLink": {
+            "value": "[parameters('sharepoint2019DownloadLink')]"
           },
           "primaryAdIpAddress": {
             "value": "[variables('primaryAdIpAddress')]"
@@ -1198,13 +1198,13 @@
             "value": "[variables('spSourceFolder')]"
           },
           "ProductKey": {
-            "value": "[parameters('sharepoint2016ProductKey')]"
+            "value": "[parameters('sharepoint2019ProductKey')]"
           },
           "assetLocation": {
             "value": "[variables('spassetLocation')]"
           },
-          "sharepoint2016SourceDLLink": {
-            "value": "[parameters('sharepoint2016DownloadLink')]"
+          "sharepoint2019SourceDLLink": {
+            "value": "[parameters('sharepoint2019DownloadLink')]"
           },
           "primaryAdIpAddress": {
             "value": "[variables('primaryAdIpAddress')]"

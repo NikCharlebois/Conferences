@@ -59,7 +59,7 @@
         "ProductKey": {
             "type": "string"
         },
-        "sharepoint2016SourceDLLink": {
+        "sharepoint2019SourceDLLink": {
             "type": "string",
             "metadata": {
                 "description": "Direct download link for the SharePoint 2016 trial ISO"
@@ -125,7 +125,7 @@
                         "InstallSourceDrive": "[parameters('sharepointInstallSourceDrive')]",
                         "InstallSourceFolderName": "[parameters('sharepointInstallSourceFolder')]",
                         "ProductKey": "[parameters('ProductKey')]",
-                        "SPDLLink": "[parameters('sharepoint2016SourceDLLink')]"
+                        "SPDLLink": "[parameters('sharepoint2019SourceDLLink')]"
                     }
                 },
                 "protectedSettings": {
