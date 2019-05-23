@@ -54,7 +54,7 @@
   },
   "variables": {
     "spFarmAccountName": "contoso\\sp_farm",
-    "spSetupAccountName": "contoso\\sp_setup",
+    "spSetupAccountName": "contoso\\sp_install",
     "storageAccountType": "Premium_LRS",
     "adVMSize": "Standard_D4s_v3",
     "sqlVMSize": "Standard_D4s_v3",
