@@ -19,11 +19,13 @@ steps:
            [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
            Write-Host "Downloading Azure Stack Tools"
            invoke-webrequest "https://github.com/Azure/AzureStack-Tools/archive/master.zip" -OutFile master.zip
+           Write-Host "Extracting Azure Stack Toolss"
            expand-archive master.zip -DestinationPath . -Force
            cd AzureStack-Tools-master
+           Write-Host "Importing Cloud Capabilities Module"
            Import-Module "./CloudCapabilities/AzureRM.CloudCapabilities.psm1"
+           Write-Host "Obtaining Capabilities from the selected location"
            Get-AzureRMCloudCapability -Location "westus" -Verbose
-           Write-Host "Done"
            Import-Module "./TemplateValidator/AzureRM.TemplateValidator.psm1"
            Write-Host "Testing Template"
            Test-AzureRMTemplate -TemplatePath "2019 - CollabSummit - Europe/azuredeploy.json" -CapabilitiesPath "./CloudCapabilities/AzureCloudCapabilities.Json" -Verbose
