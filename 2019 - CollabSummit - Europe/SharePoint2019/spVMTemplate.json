@@ -35,7 +35,7 @@
             "metadata": {
                 "description": "The Size of SharePoint VM data disk. Default 10 GB"
             },
-            "defaultValue": 20
+            "defaultValue": 10
         },
         "vmName": {
             "type": "string",
