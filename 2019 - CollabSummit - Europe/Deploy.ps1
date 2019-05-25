@@ -9,12 +9,12 @@ Write-Host "Creating Resource Group {CollabSummit$($TargetEnvironment)}..." -NoN
 $rg = Get-AzureRMResourceGroup "CollabSummit$($TargetEnvironment)" -ErrorAction SilentlyContinue
 if ($null -eq $rg)
 {
-    $rg = (New-AzureRmResourceGroup -Name "CollabSummit$($TargetEnvironment)" -Location WestUS).ResourceGroupName
+    $rg = New-AzureRmResourceGroup -Name "CollabSummit$($TargetEnvironment)" -Location WestUS
 }
 Write-Host "Done" -ForegroundColor Green
 
 $templateFile = "$TemplatePath/Demo/Demo/CollabSummit/SharePoint2019/azuredeploy.json"
 Write-Host "Deploying ARM Template..."
 New-AzureRmResourceGroupDeployment -Verbose `
-    -ResourceGroupName $rg `
+    -ResourceGroupName $rg.ResourceGroupName `
     -TemplateFile $templateFile
