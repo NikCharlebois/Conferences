@@ -2,14 +2,12 @@
     [parameter(Mandatory = $true)]
     [string]$TargetEnvironment
 )
+Write-Host "Creating Resource Group..." -NoNewLine
 $rg = (New-AzureRmResourceGroup -Name "CollabSummit$($TargetEnvironment)" -Location WestUS).ResourceGroupName
+Write-Host "Done" -ForegroundColor Green
 
 $templateFile = ".\azuredeploy.json"
-$adminUserName = "lcladmin"
-$password = ConvertTo-SecureString "Pass@word!11" -AsPlainText -Force
-
+Write-Host "Deploying ARM Template..."
 New-AzureRmResourceGroupDeployment -Verbose `
     -ResourceGroupName $rg `
-    -TemplateFile $templateFile `
-    -adminUsername $adminUserName `
-    -adminPassword $password
+    -TemplateFile $templateFile
