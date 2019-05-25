@@ -1,0 +1,16 @@
+pool:
+  vmImage: 'ubuntu-16.04'
+ 
+variables:
+  buildConfiguration: 'release'
+  major: 1
+  minor: 0
+  patch: $[counter('myversioncounter', 0)]
+ 
+steps:
+- script: |
+    dotnet build -c $(buildConfiguration)
+    dotnet test DemoLibrary.UnitTests -c $(buildConfiguration)
+    dotnet pack DemoLibrary/DemoLibrary.csproj -c $(buildConfiguration) /p:PackageVersion=$(major).$(minor).$(patch) --output $(Build.ArtifactStagingDirectory) --no-build --no-restore
+ 
+- task: PublishBuildArtifacts@1
