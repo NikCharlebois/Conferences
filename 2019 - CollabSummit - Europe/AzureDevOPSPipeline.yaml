@@ -9,11 +9,15 @@ pool:
   # macOS X Mojave 10.14 (macOS-10.14)
   # macOS X High Sierra 10.13 (macOS-10.13)
   # Ubuntu 16.04 (ubuntu-16.04)
-  vmImage: 'ubuntu-16.04'
+  vmImage: 'windows-2019'
 
 steps:
-- pwsh: 
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;invoke-webrequest https://github.com/Azure/AzureStack-Tools/archive/master.zip -OutFile master.zip;expand-archive master.zip -DestinationPath . -Force;cd AzureStack-Tools-master
+- powershell: |
+   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+   invoke-webrequest https://github.com/Azure/AzureStack-Tools/archive/master.zip -OutFile master.zip
+   expand-archive master.zip -DestinationPath . -Force
+   cd AzureStack-Tools-master
+  displayName: 'Test ARM Templates'
 - task: CopyFiles@2
   displayName: "Obtain Files from GitHub"
   inputs:
