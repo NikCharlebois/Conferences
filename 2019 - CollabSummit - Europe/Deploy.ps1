@@ -5,11 +5,11 @@
     [parameter(Mandatory = $true)]
     [string]$TemplatePath
 )
-Write-Host "Creating Resource Group {CollabSummit$($TargetEnvironment)}..." -NoNewLine
-$rg = Get-AzureRMResourceGroup "CollabSummit$($TargetEnvironment)" -ErrorAction SilentlyContinue
+Write-Host "Creating Resource Group {CS$($TargetEnvironment)}..." -NoNewLine
+$rg = Get-AzureRMResourceGroup "CS$($TargetEnvironment)" -ErrorAction SilentlyContinue
 if ($null -eq $rg)
 {
-    $rg = New-AzureRmResourceGroup -Name "CollabSummit$($TargetEnvironment)" -Location WestUS
+    $rg = New-AzureRmResourceGroup -Name "CS$($TargetEnvironment)" -Location WestUS
 }
 Write-Host "Done" -ForegroundColor Green
 
