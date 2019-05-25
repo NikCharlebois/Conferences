@@ -15,7 +15,9 @@ steps:
     azureSubscription: 'Consommation interne Microsoft Azure (aeaea727-e899-4c3b-9cdf-9dcfc75f4f2e)'
     ScriptType: 'InlineScript'
     Inline: |
-          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+           Write-Host "Setting Security Protocol"
+           [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+           Write-Host "Downloading Azure Stack Tools"
            invoke-webrequest "https://github.com/Azure/AzureStack-Tools/archive/master.zip" -OutFile master.zip
            expand-archive master.zip -DestinationPath . -Force
            cd AzureStack-Tools-master
