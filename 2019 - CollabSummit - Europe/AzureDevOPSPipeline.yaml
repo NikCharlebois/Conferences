@@ -23,6 +23,7 @@ steps:
            Get-AzureRMCloudCapability -Location "westus" -Verbose
            Import-Module "./TemplateValidator/AzureRM.TemplateValidator.psm1"
            Test-AzureRMTemplate -TemplatePath "2019 - CollabSummit - Europe/azuredeploy.json" -CapabilitiesPath "./CloudCapabilities/AzureCloudCapabilities.Json" -Verbose'displayName: 'Test ARM Templates'
+    preferredAzurePowerShellVersion: 5.1.1
 - task: CopyFiles@2
   displayName: "Obtain Files from GitHub"
   inputs:
