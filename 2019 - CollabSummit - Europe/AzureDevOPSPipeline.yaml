@@ -17,7 +17,7 @@ steps:
    expand-archive master.zip -DestinationPath . -Force
    cd AzureStack-Tools-master
    Import-Module ".\CloudCapabilities\AzureRM.CloudCapabilities.psm1"
-   Get-AzureRMCloudCapability -Location "westus" -Verbose -IncludeComputeCapabilities -IncludeStorageCapabilities
+   Get-AzureRMCloudCapability -Path . -Location "westus" -Verbose -IncludeComputeCapabilities -IncludeStorageCapabilities
    Import-Module .\TemplateValidator\AzureRM.TemplateValidator.psm1
    Test-AzureRMTemplate -TemplatePath "2019 - CollabSummit - Europe/azuredeploy.json" -CapabilitiesPath ".\CloudCapabilities\AzureCloudCapabilities.Json" -Verbose
   displayName: 'Test ARM Templates'
