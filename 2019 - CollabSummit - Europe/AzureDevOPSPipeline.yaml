@@ -21,7 +21,9 @@ steps:
            cd AzureStack-Tools-master
            Import-Module "./CloudCapabilities/AzureRM.CloudCapabilities.psm1"
            Get-AzureRMCloudCapability -Location "westus" -Verbose
+           Write-Host "Done"
            Import-Module "./TemplateValidator/AzureRM.TemplateValidator.psm1"
+           Write-Host "Testing Template"
            Test-AzureRMTemplate -TemplatePath "2019 - CollabSummit - Europe/azuredeploy.json" -CapabilitiesPath "./CloudCapabilities/AzureCloudCapabilities.Json" -Verbose
     azurePowerShellVersion: 'LatestVersion'
   displayName: 'Test ARM Templates'
