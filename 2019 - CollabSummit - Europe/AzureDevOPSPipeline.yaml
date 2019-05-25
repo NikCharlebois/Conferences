@@ -12,17 +12,17 @@ pool:
 steps:
 - task: AzurePowerShell@4
   inputs:
-    azureSubscription: Consommation interne Microsoft Azure
-    inline: |
-     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-     invoke-webrequest https://github.com/Azure/AzureStack-Tools/archive/master.zip -OutFile master.zip
-     expand-archive master.zip -DestinationPath . -Force
-     cd AzureStack-Tools-master
-     Import-Module ".\CloudCapabilities\AzureRM.CloudCapabilities.psm1"
-     Get-AzureRMCloudCapability -Location "westus" -Verbose
-     Import-Module .\TemplateValidator\AzureRM.TemplateValidator.psm1
-     Test-AzureRMTemplate -TemplatePath "2019 - CollabSummit - Europe/azuredeploy.json" -CapabilitiesPath ".\CloudCapabilities\AzureCloudCapabilities.Json" -Verbose
-  displayName: 'Test ARM Templates'
+    azureSubscription: 'Consommation interne Microsoft Azure (aeaea727-e899-4c3b-9cdf-9dcfc75f4f2e)'
+    ScriptType: 'InlineScript'
+    Inline: |
+          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+           invoke-webrequest https://github.com/Azure/AzureStack-Tools/archive/master.zip -OutFile master.zip
+           expand-archive master.zip -DestinationPath . -Force
+           cd AzureStack-Tools-master
+           Import-Module "./CloudCapabilities/AzureRM.CloudCapabilities.psm1"
+           Get-AzureRMCloudCapability -Location "westus" -Verbose
+           Import-Module "./TemplateValidator/AzureRM.TemplateValidator.psm1"
+           Test-AzureRMTemplate -TemplatePath "2019 - CollabSummit - Europe/azuredeploy.json" -CapabilitiesPath "./CloudCapabilities/AzureCloudCapabilities.Json" -Verbose'displayName: 'Test ARM Templates'
 - task: CopyFiles@2
   displayName: "Obtain Files from GitHub"
   inputs:
