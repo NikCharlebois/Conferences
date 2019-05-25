@@ -1,4 +1,12 @@
 pool:
+  # Options are
+  # Visual Studio 2019 Preview on Windows Server 2019 (windows-2019)
+  # Visual Studio 2017 on Windows Server 2016 (vs2017-win2016)
+  # Visual Studio 2015 on Windows Server 2012R2 (vs2015-win2012r2)
+  # Windows Server 1803 (win1803) - for running Windows containers
+  # macOS X Mojave 10.14 (macOS-10.14)
+  # macOS X High Sierra 10.13 (macOS-10.13)
+  # Ubuntu 16.04 (ubuntu-16.04)
   vmImage: 'ubuntu-16.04'
  
 variables:
@@ -8,9 +16,8 @@ variables:
   patch: $[counter('myversioncounter', 0)]
  
 steps:
-- script: |
-    dotnet build -c $(buildConfiguration)
-    dotnet test DemoLibrary.UnitTests -c $(buildConfiguration)
-    dotnet pack DemoLibrary/DemoLibrary.csproj -c $(buildConfiguration) /p:PackageVersion=$(major).$(minor).$(patch) --output $(Build.ArtifactStagingDirectory) --no-build --no-restore
- 
-- task: PublishBuildArtifacts@1
+- task: CopyFiles@2
+  displayName: "Obtain Files from GitHub"
+  inputs:
+    SourceFolder: '.'
+    TargetFolder: '$(build.artifactstagingdirectory)/BuildFiles'
