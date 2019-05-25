@@ -8,16 +8,10 @@ pool:
   # macOS X High Sierra 10.13 (macOS-10.13)
   # Ubuntu 16.04 (ubuntu-16.04)
   vmImage: 'ubuntu-16.04'
- 
-variables:
-  buildConfiguration: 'release'
-  major: 1
-  minor: 0
-  patch: $[counter('myversioncounter', 0)]
- 
+
 steps:
 - task: CopyFiles@2
   displayName: "Obtain Files from GitHub"
   inputs:
     SourceFolder: '2019 - CollabSummit - Europe'
-    TargetFolder: '$(build.artifactstagingdirectory)/BuildFiles'
+    TargetFolder: '$(build.artifactstagingdirectory)/CollabSummit'
