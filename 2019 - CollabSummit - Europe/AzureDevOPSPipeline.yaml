@@ -1,4 +1,4 @@
-name: $(Build.BuildNumber)
+name: $env:BUILD_BUILDNUMBER
 
 pool:
   # Options are
