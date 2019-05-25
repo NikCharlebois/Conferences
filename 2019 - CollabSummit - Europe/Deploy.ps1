@@ -6,7 +6,7 @@ Write-Host "Creating Resource Group {CollabSummit$($TargetEnvironment)}..." -NoN
 $rg = (New-AzureRmResourceGroup -Name "CollabSummit$($TargetEnvironment)" -Location WestUS).ResourceGroupName
 Write-Host "Done" -ForegroundColor Green
 
-$templateFile = ".\azuredeploy.json"
+$templateFile = "$(System.DefaultWorkingDirectory)/Demo/Demo/CollabSummit/SharePoint2019/azuredeploy.json"
 Write-Host "Deploying ARM Template..."
 New-AzureRmResourceGroupDeployment -Verbose `
     -ResourceGroupName $rg `
