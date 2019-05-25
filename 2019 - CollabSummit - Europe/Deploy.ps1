@@ -2,7 +2,7 @@
     [parameter(Mandatory = $true)]
     [string]$TargetEnvironment
 )
-Write-Host "Creating Resource Group..." -NoNewLine
+Write-Host "Creating Resource Group {CollabSummit$($TargetEnvironment)}..." -NoNewLine
 $rg = (New-AzureRmResourceGroup -Name "CollabSummit$($TargetEnvironment)" -Location WestUS).ResourceGroupName
 Write-Host "Done" -ForegroundColor Green
 
