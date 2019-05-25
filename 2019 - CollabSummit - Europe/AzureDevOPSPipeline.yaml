@@ -26,6 +26,7 @@ steps:
            Import-Module "./CloudCapabilities/AzureRM.CloudCapabilities.psm1"
            Write-Host "Obtaining Capabilities from the selected location"
            Get-AzureRMCloudCapability -Location "westus" -Verbose
+           Write-Host "Importing Template Validator module"
            Import-Module "./TemplateValidator/AzureRM.TemplateValidator.psm1"
            Write-Host "Testing Template"
            Test-AzureRMTemplate -TemplatePath "2019 - CollabSummit - Europe/azuredeploy.json" -CapabilitiesPath "./CloudCapabilities/AzureCloudCapabilities.Json" -Verbose
