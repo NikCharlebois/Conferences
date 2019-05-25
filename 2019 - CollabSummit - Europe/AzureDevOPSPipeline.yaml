@@ -1,5 +1,3 @@
-name: $env:BUILD_BUILDNUMBER
-
 pool:
   # Options are
   # Visual Studio 2019 Preview on Windows Server 2019 (windows-2019)
