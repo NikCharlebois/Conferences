@@ -17,3 +17,7 @@ steps:
   inputs:
     SourceFolder: '2019 - CollabSummit - Europe'
     TargetFolder: '$(build.artifactstagingdirectory)/CollabSummit'
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Demo'
+  inputs:
+    ArtifactName: Demo
