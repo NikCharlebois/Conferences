@@ -11,11 +11,12 @@ pool:
 
 steps:
 - powershell: |
+   Write-Host "Starting Process"
    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
    invoke-webrequest https://github.com/Azure/AzureStack-Tools/archive/master.zip -OutFile master.zip
    expand-archive master.zip -DestinationPath . -Force
    cd AzureStack-Tools-master
-   Write-host ls
+   ls
   displayName: 'Test ARM Templates'
 - task: CopyFiles@2
   displayName: "Obtain Files from GitHub"
