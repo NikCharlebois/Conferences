@@ -6,7 +6,7 @@ $DSCScriptPath         = [System.IO.Path]::GetFullPath([System.IO.Path]::Combine
 $ConfigDataPath        = [System.IO.Path]::GetFullPath([System.IO.Path]::Combine($PSScriptRoot, "ConfigurationData-$($TargetEnvironment).psd1"))
 
 $AutomationAccountName = "CollabSummit"
-$ResourceGroupName     = "CS$TargetEnvironment"
+$ResourceGroupName     = "CollabSummit"
 $WebFrontEndVM         = "SPWFE$ResourceGroupName"
 $ApplicationVM         = "SPAPP$ResourceGroupName"
 $SearchVM              = "SPSRC$ResourceGroupName"
