@@ -23,7 +23,7 @@ Write-Output "Registering the WFE SharePoint Server with Azure Automation"
 Register-AzureRmAutomationDscNode -AzureVMResourceGroup $ResourceGroupName -AzureVMName $WebFrontEndVM -AzureVMLocation $RGLocation -NodeConfigurationName "SharePoint2019.$($WebFrontEndVM)" -ActionAfterReboot ContinueConfiguration -RebootNodeIfNeeded $true -AutomationAccountName $AutomationAccountName -ResourceGroupName $AutomationResourceGroupName
 
 Write-Output "Registering the APP SharePoint Server with Azure Automation"
-Register-AzureRmAutomationDscNode -AzureVMResourceGroup $ResourceGroupName -AzureVMName $ApplicationVM -AzureVMLocation $RGLocation -NodeConfigurationName "SharePoint2019.$($WebFrontEndVM)" -ActionAfterReboot ContinueConfiguration -RebootNodeIfNeeded $true -AutomationAccountName $AutomationAccountName -ResourceGroupName $AutomationResourceGroupName
+Register-AzureRmAutomationDscNode -AzureVMResourceGroup $ResourceGroupName -AzureVMName $ApplicationVM -AzureVMLocation $RGLocation -NodeConfigurationName "SharePoint2019.$($ApplicationVM)" -ActionAfterReboot ContinueConfiguration -RebootNodeIfNeeded $true -AutomationAccountName $AutomationAccountName -ResourceGroupName $AutomationResourceGroupName
 
 Write-Output "Registering the SRC SharePoint Server with Azure Automation"
-Register-AzureRmAutomationDscNode -AzureVMResourceGroup $ResourceGroupName -AzureVMName $SearchVM -AzureVMLocation $RGLocation -NodeConfigurationName "SharePoint2019.$($WebFrontEndVM)" -ActionAfterReboot ContinueConfiguration -RebootNodeIfNeeded $true -AutomationAccountName $AutomationAccountName -ResourceGroupName $AutomationResourceGroupName
+Register-AzureRmAutomationDscNode -AzureVMResourceGroup $ResourceGroupName -AzureVMName $SearchVM -AzureVMLocation $RGLocation -NodeConfigurationName "SharePoint2019.$($SearchVM)" -ActionAfterReboot ContinueConfiguration -RebootNodeIfNeeded $true -AutomationAccountName $AutomationAccountName -ResourceGroupName $AutomationResourceGroupName
