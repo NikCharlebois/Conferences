@@ -10,6 +10,15 @@ pool:
   vmImage: 'windows-2019'
 
 steps:
+- task: CopyFiles@2
+  displayName: "Obtain Files from GitHub"
+  inputs:
+    SourceFolder: '2019 - CollabSummit - Europe'
+    TargetFolder: '$(build.artifactstagingdirectory)/CollabSummit'
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Demo'
+  inputs:
+    ArtifactName: Demo
 - task: AzurePowerShell@4
   inputs:
     azureSubscription: 'Consommation interne Microsoft Azure (aeaea727-e899-4c3b-9cdf-9dcfc75f4f2e)'
@@ -24,18 +33,9 @@ steps:
            cd AzureStack-Tools-master
            Write-Host "Importing Template Validator module"
            Import-Module "./TemplateValidator/AzureRM.TemplateValidator.psm1"
-           cd ..
+           cd $(build.artifactstagingdirectory)/CollabSummit
            ls
            Write-Host "Testing Template"
-           Test-AzureRMTemplate -TemplatePath "2019 - CollabSummit - Europe/SharePoint2019/azuredeploy.json" -CapabilitiesPath "2019 - CollabSummit - Europe/AzureCloudCapabilities.Json" -Verbose
+           Test-AzureRMTemplate -TemplatePath "$(build.artifactstagingdirectory)/CollabSummit/SharePoint2019/azuredeploy.json" -CapabilitiesPath "$(build.artifactstagingdirectory)/CollabSummit/AzureCloudCapabilities.Json" -Verbose
     azurePowerShellVersion: 'LatestVersion'
   displayName: 'Testing ARM Templates'
-- task: CopyFiles@2
-  displayName: "Obtain Files from GitHub"
-  inputs:
-    SourceFolder: '2019 - CollabSummit - Europe'
-    TargetFolder: '$(build.artifactstagingdirectory)/CollabSummit'
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: Demo'
-  inputs:
-    ArtifactName: Demo
