@@ -33,8 +33,6 @@ steps:
            cd AzureStack-Tools-master
            Write-Host "Importing Template Validator module"
            Import-Module "./TemplateValidator/AzureRM.TemplateValidator.psm1"
-           cd $(build.artifactstagingdirectory)/CollabSummit
-           ls
            Write-Host "Testing Template"
            Test-AzureRMTemplate -TemplatePath "$(build.artifactstagingdirectory)/CollabSummit/SharePoint2019/azuredeploy.json" -CapabilitiesPath "$(build.artifactstagingdirectory)/CollabSummit/AzureCloudCapabilities.Json" -Verbose
     azurePowerShellVersion: 'LatestVersion'
