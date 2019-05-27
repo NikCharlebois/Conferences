@@ -24,10 +24,12 @@ steps:
            cd AzureStack-Tools-master
            Write-Host "Importing Template Validator module"
            Import-Module "./TemplateValidator/AzureRM.TemplateValidator.psm1"
+           cd ..
+           ls
            Write-Host "Testing Template"
            Test-AzureRMTemplate -TemplatePath "2019 - CollabSummit - Europe/SharePoint2019/azuredeploy.json" -CapabilitiesPath "2019 - CollabSummit - Europe/AzureCloudCapabilities.Json" -Verbose
     azurePowerShellVersion: 'LatestVersion'
-  displayName: 'Test ARM Templates'
+  displayName: 'Testing ARM Templates'
 - task: CopyFiles@2
   displayName: "Obtain Files from GitHub"
   inputs:
