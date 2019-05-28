@@ -1,4 +1,7 @@
-param ( 
+param (
+    [parameter(Mandatory = $true)]
+    [string]$ResourceGroupNamePrefix,
+
     [parameter(Mandatory = $true)]
     [string]$TargetEnvironment
 )
@@ -8,7 +11,7 @@ $ConfigurationData               = Import-PowerShellDataFile $ConfigDataPath
 $RGLocation                      = "westus"
 $AutomationAccountName           = "CollabSummit"
 $AutomationResourceGroupName     = "CollabSummit"
-$ResourceGroupName               = "CS$TargetEnvironment"
+$ResourceGroupName               = $ResourceGroupNamePrefix + $TargetEnvironment
 $WebFrontEndVM                   = "SPWFE$ResourceGroupName"
 $ApplicationVM                   = "SPAPP$ResourceGroupName"
 $SearchVM                        = "SPSRC$ResourceGroupName"

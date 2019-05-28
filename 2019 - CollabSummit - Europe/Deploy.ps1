@@ -3,13 +3,16 @@
     [string]$TargetEnvironment,
 
     [parameter(Mandatory = $true)]
+    [string]$ResourceGroupNamePrefix,
+
+    [parameter(Mandatory = $true)]
     [string]$TemplatePath
 )
-Write-Host "Creating Resource Group {CS$($TargetEnvironment)}..." -NoNewLine
-$rg = Get-AzureRMResourceGroup "CS$($TargetEnvironment)" -ErrorAction SilentlyContinue
+Write-Host "Creating Resource Group {$($ResourceGroupNamePrefix)$($TargetEnvironment)}..." -NoNewLine
+$rg = Get-AzureRMResourceGroup "$($ResourceGroupNamePrefix)$($TargetEnvironment)" -ErrorAction SilentlyContinue
 if ($null -eq $rg)
 {
-    $rg = New-AzureRmResourceGroup -Name "CS$($TargetEnvironment)" -Location WestUS
+    $rg = New-AzureRmResourceGroup -Name "$($ResourceGroupNamePrefix)$($TargetEnvironment)" -Location WestUS
 }
 Write-Host "Done" -ForegroundColor Green
 
