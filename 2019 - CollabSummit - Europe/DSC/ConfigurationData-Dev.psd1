@@ -14,7 +14,8 @@
         }
     )
     Settings = @{
-        DomainName  = "contoso.com"
-        PrimaryADIP = "10.0.0.4"
+        DomainName     = "contoso.com"
+        PrimaryADIP    = "10.0.0.4"
+        DatabaseServer = "SPSQLCSDev"
     }
 }
