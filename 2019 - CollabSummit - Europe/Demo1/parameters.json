@@ -65,7 +65,7 @@
             "value": "MyVM"
         },
         "virtualMachineRG": {
-            "value": "TBD"
+            "value": "TBDCS"
         },
         "osDiskType": {
             "value": "Premium_LRS"
