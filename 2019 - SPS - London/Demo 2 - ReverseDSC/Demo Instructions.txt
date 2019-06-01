@@ -1,0 +1,11 @@
+Demo 2 was about extracting the DSC configuration of an existing SharePoint 2019 on-premises farm using ReverseDSC.
+
+In order to install ReverseDSC for SharePoint, assuming the server in your farm has internet connectivity, open a new PowerShell console and execute:
+
+	Install-Script SharePointDSC.Reverse -Force
+
+This only needs to be performed on 1 server in the entire farm (preferably a Web Front-End that is part of the Distributed Cache Cluster. Once the module is installed, simply run:
+
+C:\Program Files\WindowsPowerShell\Scripts\SharePointDSC.Reverse.ps1 
+
+And select the components to extract.
