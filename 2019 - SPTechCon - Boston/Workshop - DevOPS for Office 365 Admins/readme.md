@@ -1,4 +1,4 @@
-<a href="http://sptechcon.com"><img src="https://github.com/NikCharlebois/Conferences/raw/master/2018%20-%20SPTechCon%20-%20Boston/Resources/Images/SPTechCon.png" alt="SPTechCon"></a>
+<a href="http://sptechcon.com"><img src="https://github.com/NikCharlebois/Conferences/raw/master/2018%20-%20SPTechCon%20-%20Boston/Resources/Images/sptechcon.PNG" alt="SPTechCon"></a>
 <p>This repository contains Azure Resource Manager Templates that can be used to deploy the lab environment used during the "<strong>Manage your Office 365 Deployments with Azure DevOPS</strong>" session presented at the SPTechCon Boston 2019 Conference in August of 2019. It deploys a single Azure Virtual Machine based on Windows Server 2019.</p>
 
 <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FNikCharlebois%2FConferences%2Fmaster%2F2019%20-%20SPTechCon%20-%20Boston%2FWorkshop%20-%20DevOPS%20for Office%20365%20Admins%2FAzureLabDeployment%2Fazuredeploy.json"><img src="http://azuredeploy.net/deploybutton.png" alt="Deploy Environment in Azure" /></a>
