@@ -1,1 +1,5 @@
-Hello
+<a href="http://sptechcon.com"><img src="https://github.com/NikCharlebois/Conferences/raw/master/2018%20-%20SPTechCon%20-%20Boston/Resources/Images/SPTechConBoston.png" alt="SPTechCon Boston - August 2018"></a>
+<p>This repository contains the slides, demos and ARM templates for the examples presented during the <strong>MasterClass - DSC for SharePoint</strong> session at <a href="https://sptechcon.com">SPTechCon Boston 2019</a></p>
+  
+  <h2>Session Abstract</h2>
+<p>PowerShell Desired State Configuration is the new standard for automating SharePoint deployments and to ensure and monitor the compliance of your environments. In this session, we will cover everything there is to know about PowerShell DSC for SharePoint, starting from the very basics, and moving on to more advanced topics. By the end of this session, you will have everything you need to monitor your existing SharePoint 2013 + environments and to automate deployments in your organizations. Come and learn about the future of SharePoint automation!</p>
