@@ -3,7 +3,7 @@ Configuration MyFileConfig
     File MyFolder
     {
         DestinationPath = "C:\Nik"
-	    Type = "Directory"
+	Type = "Directory"
     }
     File File1
     {

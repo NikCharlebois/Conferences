@@ -1,4 +1,4 @@
-Configuration Demo4
+Configuration Demo5
 {
     param (
         [parameter(Mandatory = $true)]         
