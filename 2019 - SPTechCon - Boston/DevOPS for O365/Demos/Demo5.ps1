@@ -48,5 +48,14 @@
             GlobalAdminAccount   = $GA
             Ensure               = "Present"
         }
+
+        TeamsTeam ApplePie
+        {
+            DisplayName          = "ApplePie"
+            AllowGiphy           = $true
+            AllowChannelMentions = $false
+            GlobalAdminAccount   = $GA
+            Ensure               = "Present"
+        }
     }
 }
