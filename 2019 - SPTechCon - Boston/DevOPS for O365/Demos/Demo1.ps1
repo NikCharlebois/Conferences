@@ -1,23 +1,21 @@
-Configuration MyFileConfig
+Configuration Demo1
 {
-    File MyFolder
+    Node localhost
     {
-        DestinationPath = "C:\Nik"
-	Type = "Directory"
-    }
-    File File1
-    {
-        DestinationPath = "c:\Nik\File1.txt"
-        Contents = "This is the content of my file"
-	DependsOn = "[File]MyFolder"
-    }
+        User Nik
+        {
+            UserName = "Nik.Charlebois"
+            FullName = "Nik Charlebois"
+        }
 
-    File File2
-    {
-        DestinationPath = "c:\Nik\File2.txt"
-        Contents = "This is the content of my file2"
-	DependsOn = "[File]MyFolder"
+        User Bob
+        {
+            UserName = "Bob.Houle"
+            FullName = "Bob.Houle"
+        }
     }
 }
-MyFileConfig
-Start-DSCConfiguration MyFileConfig -Wait -Force -Verbose
+
+cd \Demo1
+Demo1
+Start-DscConfiguration Demo1 -Wait -Verbose

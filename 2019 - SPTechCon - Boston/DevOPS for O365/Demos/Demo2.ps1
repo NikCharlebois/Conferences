@@ -1,13 +1,14 @@
 ﻿Configuration Demo2
 {
     Import-DSCResource -ModuleName Office365DSC
-    $GA = Get-Credential -Username "admin@SPTCDevOPS11.onmicrosoft.com" -Message "GA"
+    $GA = Get-Credential -Username "admin@SPSOttawa2019.onmicrosoft.com" -Message "GA"
+    $TenantName = $GA.UserName.Split('@')[1]
     
     Node localhost
     {
         O365User JohnSmith
         {
-            UserPrincipalName  = "John.Smith@SPTCDevOPS11.onmicrosoft.com"
+            UserPrincipalName  = "John.Smith@$TenantName"
             DisplayName        = "John Smith"
             City               = "Boston"
             Office             = "Head Office"
@@ -18,7 +19,7 @@
 
         O365User BobHoule
         {
-            UserPrincipalName  = "Bob.Houle@SPTCDevOPS11.onmicrosoft.com"
+            UserPrincipalName  = "Bob.Houle@$TenantName"
             DisplayName        = "Bob Houle"
             City               = "Gatineau"
             Office             = "Ottawa"
@@ -35,9 +36,9 @@
             Ensure             = "Present"
         }
 
-        TeamsTeam SPTechCon
+        TeamsTeam SPSOttawa
         {
-            DisplayName          = "SPTechCon"
+            DisplayName          = "SharePoint Saturday Ottawa"
             AllowGiphy           = $false
             AllowChannelMentions = $false
             GlobalAdminAccount   = $GA
