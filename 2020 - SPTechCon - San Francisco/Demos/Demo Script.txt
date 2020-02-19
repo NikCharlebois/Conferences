@@ -1,0 +1,52 @@
+** Demo 2 **
+
+Cleaning before the Demo 2:
+
+1 - Run:
+	
+         1.1 Stop-DSCConfiguration -Force
+
+         1.2 Remove-DSCConfigurationDocument -Stage Current
+
+         1.3 Remove-DSCConfigurationDocument -Stage Pending
+
+2 - Log onto the Source tenant;
+
+	2.1 - Delete the John.Smith and Bob.Houle users from the Admin Center
+
+	2.2 - In the SPO Admin Center >  Manage Search Schema, delete the Feedback Managed Property
+
+        2.3 - In Teams, delete the SPTechCon - San Francisco Team
+
+        2.4 - In the SPO Admin Center > Sharing Policies, lift the two sliders to the top
+
+
+** Demo 3 **
+
+Cleaning before the Demo 3:
+
+1 - Delete the SPTechCon DLP Policy on the Destination tenant;
+
+2 - Delete the Randomly named Teams on the destination tenant;
+
+3 - Run:
+	
+         3.1 Stop-DSCConfiguration -Force
+
+         3.2 Remove-DSCConfigurationDocument -Stage Current
+
+         3.3 Remove-DSCConfigurationDocument -Stage Pending
+
+Steps
+
+1 - Create a new Teams in the source tenant, pick a random name;
+
+2 - Launch a new PowerShell console as an administrator;
+
+3 - Execute -> Export-O365Configuration
+
+4 - From the GUI, unselect all, then select Teams, SPO Sharing Settings, and DLP Policy;
+
+5 - Enter credentials and start extraction;
+
+6 - Open a new PowerShell window, compile and run extract against destination tenant.
