@@ -1,0 +1,13 @@
+Run the following on the machine:
+
+Stop-DSCConfiguration -Force
+Remove-DSCConfigurationDocument -Stage Pending
+Remove-DSCConfigurationDocument -Stage Current
+
+On the Source Tenant:
+
+- Delete the Automate Demo Policy Calling Policy
+
+On the Target Tenant:
+
+- Delete the Nik Demo Policy 1 and Nik Demo Policy 2 Meeting Policies
