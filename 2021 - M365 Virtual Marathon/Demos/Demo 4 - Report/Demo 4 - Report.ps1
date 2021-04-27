@@ -1,0 +1,2 @@
+﻿New-M365DSCReportFromConfiguration -Type HTML -ConfigurationPath C:\DSC\Demo2Export.ps1 -OutputPath C:\DSC\Demo2Report.html
+New-M365DSCReportFromConfiguration -Type EXCEL -ConfigurationPath C:\DSC\Demo2Export.ps1 -OutputPath C:\DSC\Demo2Report.xlsx
